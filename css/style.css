@@ -1,0 +1,213 @@
+:root{
+    --color-warning:#fae362;
+    --color-error:#f75e4b;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 1100px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(54,126,237);
+    background: linear-gradient(123deg, rgba(54,126,237,1) 22%, rgba(20,148,209,1) 72%, rgba(71,214,194,1) 91%);
+    text-align: center;
+    margin: auto;   
+    box-shadow: 0px 9px 78px 2px rgba(104, 104, 104, 0.75);
+    border-radius: 0 0 20px 20px;
+}
+#location-img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+#location-img:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+}
+#search-input{
+    width: 250px;
+    border-radius: 20px  0 0 20px;
+    border: none;
+    padding: 7px;
+    font-size: 1.25rem;
+}
+#search-input:focus{
+    outline: none;
+}
+#search-button{
+    padding: 11px;
+    background-color: var(--color-warning);
+    border: none;
+    border-radius: 0 20px 20px 0;
+    transition: all 0.3s;
+}
+#search-button:hover{
+    cursor: pointer;
+    background-color: #f3d217;
+}
+#current-weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(54,126,237);
+    background: linear-gradient(123deg, rgba(54,126,237,1) 22%, rgba(20,148,209,1) 72%, rgba(71,214,194,1) 91%);
+    width: 400px;
+    height: 200px;
+    position: relative;
+    margin: auto;
+    bottom: 60px;
+    border-radius: 20px;
+    box-shadow: 0px 9px 78px 2px rgba(104, 104, 104, 0.75);
+}
+#head{
+    text-align: center;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#main{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    padding-top: 20px;
+}
+#bottom{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 300px;
+    align-items: center;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    padding-top: 20px;
+}
+#forecast{
+    width: 1100px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.each-day{
+    background: rgb(54,126,237);
+    background: linear-gradient(123deg, rgba(54,126,237,1) 22%, rgba(20,148,209,1) 72%, rgba(71,214,194,1) 91%);
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 0px 9px 78px 2px rgba(104, 104, 104, 0.75);
+    margin: 10px 30px;
+}
+.each-day img{
+    width: 70px;
+}
+.week-day{
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+}
+.week-day-forecast{
+    color: #f5f5f5;
+    margin: 10px 0;
+}
+.each-day span{
+    color: #f5f5f5dc;
+}
+#modal{
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.7);
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+#modal > div{
+    background-color: #f5f5f5;
+    width: 400px;
+    height: 170px;
+    border-radius: 20px;
+    padding: 20PX;
+}
+#modal span{
+    padding: 6px;
+    background-color: #eb2b12;
+    color: #f5f5f5;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s all ease-in;
+}
+#modal p{
+    font-size: 1.2rem;
+    color: #f75e4b;
+    margin-top: 20px;
+}
+#modal span:hover{
+    background-color: #f75e4b;
+}
+#loader{
+    width: 100px;
+    height: 100px;
+    border: 7px solid #f5f5f5;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: rotation 0.9s infinite linear;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@media(max-width:1100px){
+    header{
+        width: auto;
+        margin: 0 35px;
+    }
+    #forecast{
+        width: auto;
+        flex-wrap: wrap;
+    }
+}
+@media(max-width:660px){
+    #current-weather{
+        width: auto;
+        margin: 0 120px;
+    }
+    #bottom{
+        flex-direction: column;
+        width: auto;
+        gap: 10px;
+    }
+}
+@media(max-width:525px){
+    #search-input{
+        width: 150px;
+    }
+    #main{
+        flex-direction: column;
+        gap: 7px;
+        align-items: center;
+    }
+    #current-weather{
+        height: 250px;
+    }
+}
